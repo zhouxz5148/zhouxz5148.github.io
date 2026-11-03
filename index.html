@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>变态SF,超变态SF,新开超级变态传奇-飘渺手游网</title>
+<meta name="keywords" content="变态SF,超变态SF,新开超级变态传奇,飘渺手游网,传奇SF,变态传奇">
+<meta name="description" content="飘渺手游网提供最新变态SF、超变态SF、新开超级变态传奇资讯，每日更新开服信息、游戏攻略、版本动态，是传奇玩家首选资讯平台。">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Microsoft Yahei", "PingFang SC", sans-serif; background: #f5f5f5; color: #333; line-height: 1.6; }
+a { text-decoration: none; color: #333; }
+a:hover { color: #c81623; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+
+/* 顶部时间栏 */
+.top-bar { background: #222; color: #999; font-size: 12px; padding: 6px 0; }
+.top-bar .container { display: flex; justify-content: space-between; }
+.top-bar a { color: #999; margin: 0 8px; }
+.top-bar a:hover { color: #fff; }
+
+/* 头部广告 */
+.header-ad { background: #fff; padding: 15px 0; border-bottom: 1px solid #eee; }
+#wd_ad_box { max-width: 1200px; margin: 0 auto; text-align: center; }
+#wd_ad_box iframe { max-width: 100%; }
+
+/* Logo栏 */
+.logo-bar { background: #fff; padding: 18px 0; border-bottom: 3px solid #c81623; }
+.logo-bar .container { display: flex; justify-content: space-between; align-items: center; }
+.logo h1 { font-size: 30px; color: #c81623; font-weight: bold; }
+.logo p { font-size: 13px; color: #666; margin-top: 4px; }
+.search-box { display: flex; border: 2px solid #c81623; border-radius: 2px; overflow: hidden; }
+.search-box input { width: 280px; padding: 8px 12px; border: none; outline: none; font-size: 14px; }
+.search-box button { padding: 0 20px; background: #c81623; color: #fff; border: none; font-size: 15px; cursor: pointer; }
+
+/* 导航栏 */
+.nav { background: #c81623; }
+.nav ul { display: flex; list-style: none; }
+.nav ul li a { display: block; padding: 12px 24px; color: #fff; font-size: 16px; font-weight: 500; }
+.nav ul li a:hover, .nav ul li a.active { background: #a0101c; }
+
+/* 主体布局 */
+.main { padding: 20px 0; }
+.main .container { display: flex; gap: 20px; }
+.content { flex: 1; }
+.sidebar { width: 300px; }
+
+/* 头条新闻 */
+.headline { background: #fff; margin-bottom: 20px; padding: 15px; border-radius: 3px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+.headline-banner { position: relative; margin-bottom: 15px; }
+.headline-banner img { width: 100%; height: 380px; object-fit: cover; border-radius: 3px; }
+.headline-banner .tag { position: absolute; top: 15px; left: 15px; background: #c81623; color: #fff; padding: 5px 12px; font-size: 13px; border-radius: 2px; }
+.headline-title { font-size: 26px; font-weight: bold; color: #222; line-height: 1.4; margin-bottom: 10px; }
+.headline-title:hover { color: #c81623; }
+.headline-meta { font-size: 13px; color: #999; padding-bottom: 12px; border-bottom: 1px dashed #eee; margin-bottom: 12px; }
+.headline-meta span { margin-right: 18px; }
+.headline-desc { font-size: 15px; color: #555; line-height: 1.8; }
+
+/* 板块标题 */
+.section { background: #fff; margin-bottom: 20px; border-radius: 3px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+.section-title { padding: 12px 15px; border-bottom: 2px solid #c81623; display: flex; justify-content: space-between; align-items: center; }
+.section-title h2 { font-size: 20px; color: #222; position: relative; padding-left: 12px; }
+.section-title h2::before { content: ''; position: absolute; left: 0; top: 4px; width: 4px; height: 18px; background: #c81623; }
+.section-title .more { font-size: 13px; color: #666; }
+
+/* 新闻列表 */
+.news-list { padding: 10px 15px; }
+.news-item { display: flex; gap: 15px; padding: 15px 0; border-bottom: 1px solid #f0f0f0; }
+.news-item:last-child { border-bottom: none; }
+.news-item-img { width: 200px; height: 130px; flex-shrink: 0; overflow: hidden; border-radius: 3px; }
+.news-item-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+.news-item-img:hover img { transform: scale(1.05); }
+.news-item-content { flex: 1; }
+.news-item-title { font-size: 18px; font-weight: 600; color: #222; margin-bottom: 8px; line-height: 1.4; }
+.news-item-title:hover { color: #c81623; }
+.news-item-desc { font-size: 14px; color: #666; line-height: 1.7; margin-bottom: 10px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.news-item-meta { font-size: 12px; color: #999; }
+.news-item-meta span { margin-right: 15px; }
+.news-item-meta .cat { background: #f5f5f5; padding: 2px 8px; border-radius: 2px; color: #c81623; }
+
+/* 开服列表 */
+.server-list { padding: 10px 15px; }
+.server-item { display: flex; align-items: center; padding: 12px 0; border-bottom: 1px solid #f0f0f0; }
+.server-item:last-child { border-bottom: none; }
+.server-time { width: 120px; text-align: center; }
+.server-time .hour { font-size: 22px; font-weight: bold; color: #c81623; }
+.server-time .date { font-size: 12px; color: #999; }
+.server-info { flex: 1; padding: 0 15px; }
+.server-name { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+.server-tag { font-size: 12px; }
+.server-tag span { background: #fff0f1; color: #c81623; padding: 2px 6px; border-radius: 2px; margin-right: 6px; font-size: 11px; }
+.server-btn { padding: 8px 20px; background: #c81623; color: #fff; border-radius: 3px; font-size: 14px; cursor: pointer; border: none; }
+.server-btn:hover { background: #a0101c; }
+
+/* 侧边栏 */
+.widget { background: #fff; margin-bottom: 20px; border-radius: 3px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+.widget-title { padding: 10px 15px; border-bottom: 1px solid #eee; font-size: 17px; font-weight: bold; color: #222; }
+.widget-content { padding: 12px 15px; }
+.hot-list li { padding: 8px 0; border-bottom: 1px dashed #f0f0f0; display: flex; gap: 8px; font-size: 14px; }
+.hot-list li:last-child { border-bottom: none; }
+.hot-list .num { width: 22px; height: 22px; background: #ccc; color: #fff; text-align: center; line-height: 22px; font-size: 12px; border-radius: 2px; flex-shrink: 0; }
+.hot-list li:nth-child(1) .num, .hot-list li:nth-child(2) .num, .hot-list li:nth-child(3) .num { background: #c81623; }
+.hot-list a { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hot-list a:hover { color: #c81623; }
+
+/* 攻略列表 */
+.guide-list li { padding: 10px 0; border-bottom: 1px dashed #f0f0f0; font-size: 14px; position: relative; padding-left: 12px; }
+.guide-list li::before { content: '•'; position: absolute; left: 0; color: #c81623; }
+.guide-list li:last-child { border-bottom: none; }
+.guide-list .date { float: right; color: #999; font-size: 12px; }
+
+/* 底部关键词 */
+.footer-keywords { background: #fff; padding: 20px 0; border-top: 1px solid #eee; margin-top: 20px; }
+.footer-keywords .container { font-size: 14px; line-height: 2; }
+.footer-keywords a { color: #666; margin: 0 10px; }
+.footer-keywords a:hover { color: #c81623; }
+.footer-keywords strong { color: #222; margin-right: 10px; }
+
+/* 版权 */
+.copyright { background: #222; color: #999; padding: 20px 0; font-size: 13px; text-align: center; line-height: 1.8; }
+.copyright a { color: #ccc; }
+.copyright a:hover { color: #fff; }
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .main .container { flex-direction: column; }
+  .sidebar { width: 100%; }
+  .nav ul { overflow-x: auto; }
+  .news-item { flex-direction: column; }
+  .news-item-img { width: 100%; height: 200px; }
+  .search-box input { width: 180px; }
+  .headline-banner img { height: 220px; }
+  .headline-title { font-size: 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- 顶部时间栏 -->
+<div class="top-bar">
+  <div class="container">
+    <div class="top-time" id="topTime"></div>
+    <div class="top-links">
+      <a href="/">设为首页</a>|<a href="/">加入收藏</a>|<a href="#contact">联系我们</a>|<a href="#sitemap">网站地图</a>
+    </div>
+  </div>
+</div>
+
+<!-- 顶部广告位 -->
+<div class="header-ad">
+  <div id="wd_ad_box"></div>
+  <script>
+  (function(){
+    var adBox = document.getElementById('wd_ad_box');
+    if(!adBox) return;
+    var f = document.createElement('iframe');
+    f.setAttribute('frameborder','0');
+    f.setAttribute('scrolling','no');
+    f.setAttribute('name','WD123');
+    f.setAttribute('align','center');
+    f.setAttribute('width','100%');
+    f.setAttribute('height','4000');
+    f.setAttribute('vspace','-0');
+    f.setAttribute('loading','lazy');
+    f.src = 'https://www.3000ok.ws/' + '3000ok.html';
+    adBox.appendChild(f);
+  })();
+  </script>
+</div>
+
+<!-- Logo栏 -->
+<div class="logo-bar">
+  <div class="container">
+    <div class="logo">
+      <h1>飘渺手游网</h1>
+      <p>变态SF_超变态SF_新开超级变态传奇 专业资讯门户</p>
+    </div>
+    <div class="search-box">
+      <input type="text" placeholder="搜索传奇SF、新服、攻略...">
+      <button>搜索</button>
+    </div>
+  </div>
+</div>
+
+<!-- 导航栏 -->
+<div class="nav">
+  <div class="container">
+    <ul>
+      <li><a href="/" class="active">网站首页</a></li>
+      <li><a href="#new">最新开服</a></li>
+      <li><a href="#bt">变态SF</a></li>
+      <li><a href="#cbt">超变态SF</a></li>
+      <li><a href="#newserver">新开传奇</a></li>
+      <li><a href="#gl">游戏攻略</a></li>
+      <li><a href="#version">版本资讯</a></li>
+      <li><a href="#hd">活动中心</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="main">
+  <div class="container">
+    <!-- 左侧主内容 -->
+    <div class="content">
+      <!-- 头条新闻 -->
+      <div class="headline">
+        <div class="headline-banner">
+          <span class="tag">头条</span>
+          <img src="https://gips2.baidu.com/it/u=2373555049,2714290459&fm=3086&app=3086&f=JPEG&wm=1,baiduai3,0,0,13,9&w=5,5?w=1280&h=720" alt="新版本重磅更新">
+        </div>
+        <a href="#" class="headline-title">【重磅】2026年度超变态SF新版本上线 百倍爆率+全屏神装震撼来袭</a>
+        <div class="headline-meta">
+          <span>来源：飘渺手游网</span>
+          <span id="headlineDate"></span>
+          <span>编辑：传奇小编</span>
+          <span>阅读：<script>document.write(Math.floor(Math.random()*8000+2000))</script></span>
+        </div>
+        <p class="headline-desc">
+          今日，备受玩家期待的全新超变态SF版本正式开放，新版本带来了百倍爆率机制、全屏光柱特效、无限元宝福利，同时新增三大跨服战场，千人沙巴克激情重燃。开区前10分钟人气突破3万+，服务器全线飘红，是2026年最受欢迎的新开超级变态传奇版本之一...
+        </p>
+      </div>
+
+      <!-- 最新资讯板块 -->
+      <div class="section">
+        <div class="section-title">
+          <h2>游戏资讯</h2>
+          <a href="#" class="more">更多+</a>
+        </div>
+        <div class="news-list">
+          <div class="news-item">
+            <div class="news-item-img">
+              <img src="https://gips3.baidu.com/it/u=960681506,4157599083&fm=3086&app=3086&f=JPEG&wm=1,baiduai3,0,0,13,9&w=5,5?w=1152&h=864" alt="今日新服开放">
+            </div>
+            <div class="news-item-content">
+              <a href="#" class="news-item-title"><span class="cat">新服</span> 今日新开超级变态传奇首服开启 送满级VIP+无限元宝</a>
+              <p class="news-item-desc">今日上午10点，全新超变态SF首区正式开放，进服即送满级VIP、999万元宝、+15终极套装，散人玩家也能轻松霸服。首杀BOSS必爆屠龙，沙城奖励万元现金红包，人气火爆...</p>
+              <div class="news-item-meta">
+                <span>发布时间：<span class="news-time">2026-11-03</span></span>
+                <span>阅读：<script>document.write(Math.floor(Math.random()*3000+1000))</script></span>
+                <span>评论：<script>document.write(Math.floor(Math.random()*100+10))</script></span>
+              </div>
+            </div>
+          </div>
+          <div class="news-item">
+            <div class="news-item-img">
+              <img src="https://gips3.baidu.com/it/u=1611350720,2845574138&fm=3086&app=3086&f=JPEG&wm=1,baiduai3,0,0,13,9&w=5,5?w=1152&h=864" alt="BOSS攻略">
+            </div>
+            <div class="news-item-content">
+              <a href="#" class="news-item-title"><span class="cat">攻略</span> 超变态SF世界BOSS击杀指南 必爆终极神装技巧分享</a>
+              <p class="news-item-desc">很多玩家不知道世界BOSS的卡位技巧，今天给大家带来详细的打法攻略。法师站位、道士施毒、战士拉怪的完美配合，三分钟轻松拿下教主，必出裁决骨玉系列神装，爆率高达80%...</p>
+              <div class="news-item-meta">
+                <span>发布时间：<span class="news-time">2026-11-02</span></span>
+                <span>阅读：<script>document.write(Math.floor(Math.random()*4000+1500))</script></span>
+                <span>评论：<script>document.write(Math.floor(Math.random()*200+30))</script></span>
+              </div>
+            </div>
+          </div>
+          <div class="news-item">
+            <div class="news-item-img">
+              <img src="https://gips2.baidu.com/it/u=2373555049,2714290459&fm=3086&app=3086&f=JPEG&wm=1,baiduai3,0,0,13,9&w=5,5?w=1280&h=720" alt="新版本更新">
+            </div>
+            <div class="news-item-content">
+              <a href="#" class="news-item-title"><span class="cat">版本</span> 变态SF11月版本更新公告 新增跨服沙巴克+神装熔炼系统</a>
+              <p class="news-item-desc">本次更新将开放跨服沙巴克战场，全服玩家同台竞技，获胜行会可获得专属称号和海量奖励。同时新增神装熔炼系统，多余装备可熔炼为升级材料，战力提升更轻松...</p>
+              <div class="news-item-meta">
+                <span>发布时间：<span class="news-time">2026-11-01</span></span>
+                <span>阅读：<script>document.write(Math.floor(Math.random()*3500+1200))</script></span>
+                <span>评论：<script>document.write(Math.floor(Math.random()*150+20))</script></span>
+              </div>
+            </div>
+          </div>
+          <div class="news-item">
+            <div class="news-item-img">
+              <img src="https://gips0.baidu.com/it/u=3834424614,4134888226&fm=3086&app=3086&f=JPEG&wm=1,baiduai3,0,0,13,9&w=5,5?w=1280&h=720" alt="职业平衡">
+            </div>
+            <div class="news-item-content">
+              <a href="#" class="news-item-title"><span class="cat">测评</span> 超变态SF三职业强度排行 哪个职业才是版本答案</a>
+              <p class="news-item-desc">新版本上线后三职业平衡调整完成，战士烈火伤害提升30%，法师冰咆哮范围增加，道士召唤神兽属性翻倍。经过实测，当前版本PK最强是战士，打宝最快是法师，道士最适合散人玩家...</p>
+              <div class="news-item-meta">
+                <span>发布时间：<span class="news-time">2026-10-30</span></span>
+                <span>阅读：<script>document.write(Math.floor(Math.random()*5000+2000))</script></span>
+                <span>评论：<script>document.write(Math.floor(Math.random()*300+50))</script></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 今日开服列表 -->
+      <div class="section" id="new">
+        <div class="section-title">
+          <h2>今日开服</h2>
+          <a href="#" class="more">更多+</a>
+        </div>
+        <div class="server-list">
+          <div class="server-item">
+            <div class="server-time">
+              <div class="hour">09:00</div>
+              <div class="date server-date">11-03</div>
+            </div>
+            <div class="server-info">
+              <div class="server-name">【超变合击】王者归来一區</div>
+              <div class="server-tag">
+                <span>百倍爆率</span><span>无限元宝</span><span>满级VIP</span><span>无会员</span>
+              </div>
+            </div>
+            <button class="server-btn">立即进入</button>
+          </div>
+          <div class="server-item">
+            <div class="server-time">
+              <div class="hour">10:00</div>
+              <div class="date server-date">11-03</div>
+            </div>
+            <div class="server-info">
+              <div class="server-name">【超级变态】热血沙城首区</div>
+              <div class="server-tag">
+                <span>千倍经验</span><span>光柱满屏</span><span>送屠龙</span><span>散人友好</span>
+              </div>
+            </div>
+            <button class="server-btn">立即进入</button>
+          </div>
+          <div class="server-item">
+            <div class="server-time">
+              <div class="hour">11:00</div>
+              <div class="date server-date">11-03</div>
+            </div>
+            <div class="server-info">
+              <div class="server-name">【变态SF】刀刀暴击专区</div>
+              <div class="server-tag">
+                <span>刀刀切割</span><span>自动回收</span><span>免费挂机</span><span>打金稳定</span>
+              </div>
+            </div>
+            <button class="server-btn">立即进入</button>
+          </div>
+          <div class="server-item">
+            <div class="server-time">
+              <div class="hour">14:00</div>
+              <div class="date server-date">11-03</div>
+            </div>
+            <div class="server-info">
+              <div class="server-name">【新开超变】玛法传说二区</div>
+              <div class="server-tag">
+                <span>全新地图</span><span>终极套好爆</span><span>回收元宝</span><span>公平公正</span>
+              </div>
+            </div>
+            <button class="server-btn">立即进入</button>
+          </div>
+          <div class="server-item">
+            <div class="server-time">
+              <div class="hour">19:00</div>
+              <div class="date server-date">11-03</div>
+            </div>
+            <div class="server-info">
+              <div class="server-name">【超变单职业】战神争霸首区</div>
+              <div class="server-tag">
+                <span>单职业</span><span>无任务</span><span>上线满级</span><span>沙奖万元</span>
+              </div>
+            </div>
+            <button class="server-btn">立即进入</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 右侧边栏 -->
+    <div class="sidebar">
+      <!-- 热门新闻 -->
+      <div class="widget">
+        <div class="widget-title">热门推荐</div>
+        <div class="widget-content">
+          <ul class="hot-list">
+            <li><span class="num">1</span><a href="#">2026年最火超变态SF排行榜 第一名人气突破5万+</a></li>
+            <li><span class="num">2</span><a href="#">散人玩家必玩！这几个变态SF不用充值也能当大哥</a></li>
+            <li><span class="num">3</span><a href="#">超变态SF打金攻略 一天稳赚200元宝变现方法</a></li>
+            <li><span class="num">4</span><a href="#">新开超级变态传奇今日开服表 10点首区准时开放</a></li>
+            <li><span class="num">5</span><a href="#">三职业超变版本推荐 道士带双虎全区横着走</a></li>
+            <li><span class="num">6</span><a href="#">盘点爆率最高的五个变态SF 终极装备随便爆</a></li>
+            <li><span class="num">7</span><a href="#">手机电脑双端互通的超变传奇 随时随地玩</a></li>
+            <li><span class="num">8</span><a href="#">沙巴克攻城战必胜技巧 老玩家独家分享</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 游戏攻略 -->
+      <div class="widget" id="gl">
+        <div class="widget-title">最新攻略</div>
+        <div class="widget-content">
+          <ul class="guide-list">
+            <li><a href="#">新手快速升级路线 一小时满级攻略</a><span class="date guide-date"></span></li>
+            <li><a href="#">法师快速打宝地图推荐 收益翻倍</a><span class="date guide-date"></span></li>
+            <li><a href="#">战士PK走位技巧 烈火秒人教学</a><span class="date guide-date"></span></li>
+            <li><a href="#">道士越级打BOSS攻略 单挑终极大怪</a><span class="date guide-date"></span></li>
+            <li><a href="#">装备强化技巧 +15成功率高达90%</a><span class="date guide-date"></span></li>
+            <li><a href="#">元宝快速获取方法 日入百万不是梦</a><span class="date guide-date"></span></li>
+            <li><a href="#">沙巴克攻城战术详解 指挥必看</a><span class="date guide-date"></span></li>
+            <li><a href="#">散人玩家发育路线 零氪也能成神</a><span class="date guide-date"></span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 开服预告 -->
+      <div class="widget">
+        <div class="widget-title">明日开服预告</div>
+        <div class="widget-content">
+          <ul class="guide-list">
+            <li><a href="#">【09点】超变加速版 百倍攻速爽到爆</a><span class="date">11-04</span></li>
+            <li><a href="#">【10点】冰雪之城单职业 打金专属</a><span class="date">11-04</span></li>
+            <li><a href="#">【14点】英雄合击版本 战法道组合</a><span class="date">11-04</span></li>
+            <li><a href="#">【19点】火龙超变 终极火龙套免费送</a><span class="date">11-04</span></li>
+            <li><a href="#">【20点】复古微变 原汁原味老传奇</a><span class="date">11-04</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 底部关键词内链 -->
+<div class="footer-keywords">
+  <div class="container">
+    <strong>热门关键词：</strong>
+    <a href="/">变态SF</a>|
+    <a href="/">超变态SF</a>|
+    <a href="/">新开超级变态传奇</a>|
+    <a href="/">超级变态传奇</a>|
+    <a href="/">传奇SF发布网</a>|
+    <a href="/">新开传奇SF</a>|
+    <a href="/">超变传奇</a>|
+    <a href="/">变态传奇</a>|
+    <a href="/">传奇新服表</a>|
+    <a href="/">打金传奇</a>|
+    <a href="/">单职业传奇</a>|
+    <a href="/">合击传奇</a>|
+    <a href="/">飘渺手游网</a>
+  </div>
+</div>
+
+<!-- 版权信息 -->
+<div class="copyright">
+  <div class="container">
+    <p>Copyright © <span id="year"></span> <a href="/">飘渺手游网</a> 版权所有</p>
+    <p>本站致力于为广大传奇玩家提供最新最全的<a href="/">变态SF</a>、<a href="/">超变态SF</a>、<a href="/">新开超级变态传奇</a>开服资讯与游戏攻略</p>
+    <p>本站所有游戏内容均来自网络，仅供娱乐，如有侵权请联系删除</p>
+  </div>
+</div>
+
+<script>
+// 更新日期时间
+function updateDateTime() {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, '0');
+  const day = String(now.getDate()).padStart(2, '0');
+  const weekDays = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+  const week = weekDays[now.getDay()];
+  const hours = String(now.getHours()).padStart(2, '0');
+  const minutes = String(now.getMinutes()).padStart(2, '0');
+  const seconds = String(now.getSeconds()).padStart(2, '0');
+  
+  const timeStr = `${year}年${month}月${day}日 ${week} ${hours}:${minutes}:${seconds}`;
+  const dateStr = `${year}-${month}-${day}`;
+  
+  document.getElementById('topTime').textContent = '欢迎访问飘渺手游网！今天是 ' + timeStr;
+  document.getElementById('headlineDate').textContent = '发布时间：' + dateStr;
+  document.getElementById('year').textContent = year;
+  
+  // 更新新闻日期（动态显示今天）
+  document.querySelectorAll('.news-time').forEach(el => {
+    if(el.textContent === '2026-11-03') el.textContent = dateStr;
+  });
+  
+  // 更新开服日期
+  document.querySelectorAll('.server-date').forEach(el => {
+    if(el.textContent === '11-03') el.textContent = `${month}-${day}`;
+  });
+  
+  // 更新攻略日期
+  const yest = new Date(now.getTime() - 86400000);
+  const yestStr = `${String(yest.getMonth()+1).padStart(2,'0')}-${String(yest.getDate()).padStart(2,'0')}`;
+  document.querySelectorAll('.guide-date').forEach((el, idx) => {
+    if(idx < 3) el.textContent = `${month}-${day}`;
+    else el.textContent = yestStr;
+  });
+}
+updateDateTime();
+setInterval(updateDateTime, 1000);
+</script>
+
+<!-- 统计代码 -->
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"KV2bPUwVeR3jCIFM",ck:"KV2bPUwVeR3jCIFM"})</script>
+
+</body>
+</html>
